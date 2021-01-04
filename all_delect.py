@@ -10,7 +10,6 @@ def all_delect(public_bucket, public_key, private_key):
     while dict(ret)["DataSet"]:
         for i in dict(ret)["DataSet"]:
             cloudfile_name = dict(i)["FileName"]
-        #     # while cloudfile_name:
             hello_file.deletefile(public_bucket, cloudfile_name)
             # print(cloudfile_name)
             ret, resp = hello_file.getfilelist(public_bucket)
@@ -22,5 +21,9 @@ if __name__ == "__main__":
     public_key = input('输入公钥：')
     private_key = input('输入私钥：')
     region = input('输入区域：')
+    # 设置上传host后缀,外网可用后缀形如 .cn-bj.ufileos.com（cn-bj为北京地区，其他地区具体后缀可见控制台：对象存储-单地域空间管理-存储空间域名）
+    config.set_default(uploadsuffix='.{0}.ufileos.com'.format(region))
+    # 设置下载host后缀，普通下载后缀即上传后缀，CDN下载后缀为 .ufile.ucloud.com.cn
+    config.set_default(downloadsuffix='.ufile.ucloud.com.cn')
 
     all_delect(public_bucket, public_key, private_key)
