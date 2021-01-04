@@ -4,7 +4,7 @@ from ufile import config
 import json
 
 
-def all_delect(publicBucket, publicKey, privateKey):
+def all_delect(public_bucket, public_key, private_key):
     hello_file = filemanager.FileManager(public_key, private_key)
     ret, resp = hello_file.getfilelist(public_bucket)
     while dict(ret)["DataSet"]:
