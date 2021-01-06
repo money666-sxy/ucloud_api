@@ -75,11 +75,13 @@ pip3 install -r requirements.txt
 
 **2、执行脚本**
 
+```
+python3 calculate_signature_url.py
+```
+
+**3、核对生成 URL**
+
 > 其中代码中的示例是以 创建云主机 为例
 > 如果出现 {"RetCode":171,"Message":"Signature VerifyAC Error"}
 > 可以在 https://console.ucloud.cn/uapi/ucloudapi
 > 控制台输入相同参数调用查看报错
-
-```
-python3 calculate_signature_url.py
-```
