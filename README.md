@@ -6,9 +6,11 @@
 yum install python3 -y
 yum install git -y
 pip3 install ucloud-sdk-python3
-git clone https://github.com/ucloud/ucloud-sdk-python3.git
-cd ucloud-sdk-python3
-python3 setup.py install
+
+如果安装失败 请执行以下命令
+# git clone https://github.com/ucloud/ucloud-sdk-python3.git
+# cd ucloud-sdk-python3
+# python3 setup.py install
 ```
 
 **2、填写必填**
